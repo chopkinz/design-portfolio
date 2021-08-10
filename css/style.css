@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 
-/* Custom Properties, update these for your own design */
-
+/* Properties */
 :root {
     --ff-primary: 'Spartan', sans-serif;
     --ff-secondary: 'Spartan', sans-serif;
@@ -36,7 +35,6 @@
 }
 
 /* General styles */
-
 html {
     scroll-behavior: smooth;
 }
@@ -51,7 +49,7 @@ body {
 }
 
 section {
-    padding: 5em 2em;
+    padding: 8em 4em 8em;
 }
 
 img {
@@ -62,7 +60,6 @@ img {
 strong { font-weight: var(--fw-bold) }
 
 /* Typography */
-
 h1,
 h2,
 h3 {
@@ -107,8 +104,8 @@ h3 { font-size: var(--fs-h3) }
     font-weight: var(--fw-bold);
     margin-bottom: 2em;
 }
-/* header */
 
+/* header */
 header {
     display: flex;
     justify-content: space-between;
@@ -116,10 +113,17 @@ header {
 }
 
 .logo {
-    display: block;
-    max-width: 250px;
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 100px;
+    min-height: 50px;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: 2em;
+    max-width: 150px;
+    line-height: 22px;
+    padding-left: 10px;
 }
-
 .nav {
     position: fixed;
     background: var(--clr-light);
@@ -128,7 +132,7 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 200;
     
     transform: translateX(100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
@@ -161,8 +165,8 @@ header {
 	border: 0;
 	cursor: pointer;
 	position: absolute;
-	right: 2em;
-	top: 2em;
+    margin-top: 2rem;
+    left: 2rem;
 	z-index: 1000;
 }
 
@@ -215,10 +219,12 @@ header {
 .hamburger::after { bottom: 6px; }
 
 
-/*  Intro section  */
-
+/*  Intro  */
 .intro {
     position: relative;
+    top: 0;
+    left: 3em;
+    right: 3em;
 }
 
 .intro__img {
@@ -260,12 +266,16 @@ header {
 }
 
 .about-me {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
-
 .about-me__img {
+    z-index: 0; 
+    margin-left:auto; 
+    margin-right:auto;
     box-shadow: var(--bs);
+    min-width: 300px;
+    height: auto;
 }
 
 @media (min-width: 600px) {
@@ -282,63 +292,64 @@ header {
     .section__title--about {
         grid-area: title;
     }
-    
     .section__subtitle--about {
         grid-column: 1 / -1;
         grid-row: 2;
         position: relative;
         left: -1em;
         width: calc(100% + 2em);
-        padding-left: 2em;
-        padding-right: calc(200px + 4em);
+        padding-left: 1em;
+        padding-right: calc(200px + 3em);
     }
-    
+
     .about-me__img {
         grid-area: img;
-        position: relative;
+        position: absolute;
         z-index: 2;
     }
 }
 
-/* My Work */
-
+/* Portfolio */
 .my-work {
     color: var(--clr-light);
-    text-align: center;
+    position: relative;
+    width: 100%;
 }
 
 .portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr)); 
-    max-width: 0 auto;
-    margin: 0 auto;
-
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: auto;
 }
 
+* {
+    box-sizing: border-box;
+}
+.div {
+    display: block;
+}
 .portfolio__item {
-	background: var(--clr-light);
-    overflow: hidden;
-    text-decoration: none;
-    padding: none;
-    max-width: 100%;
+    width: 26%;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    min-height: 125px;
+    min-width: 150px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    background: var(--clr-light);
+    margin: none;
 }
 
-.portfolio__item--info {
-    overflow-wrap: break-word;
-    font-weight: var(--fw-bold);
-}
-
-.portfolio__item--info p {
-    color: white;
-    vertical-align: center;
-}
 .portfolio__img {
+    height: 100%;
+    width: 100%;
     transition: 
         transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity: 550ms linear;
-        width: 100%;
-        height: 100%;
-        max-height: 1000px;
+        opacity: 250ms linear;
 }
 
 .portfolio__item:focus {
@@ -348,30 +359,32 @@ header {
 
 .portfolio__item:hover {
     background: var(--clr-accent);
-    text-decoration: var(--clr-light);
+    overflow: hidden;
 }
 
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
-    background: var(--clr-accent);
-    transform: scale(1.1);
-    opacity: 0.3;
-    text-decoration: none;
+    transform: scale(1.2);
+    opacity: 0.2;
 }
 
 /* resume */
 .resume {
     display: flex;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 800px;
 }
 
 .resume-img {
-    vertical-align: top;
-    max-width: 1920px;
-    max-height: 2485px;
-    border: 2px solid var(--clr-dark);
+    padding: 5px;
+    width: auto;
+    height: auto;
+    min-width: 200px; 
 
+}
+
+.resume-img:hover {
+    box-shadow: 0 0 50px var(--clr-dark);
 }
 
 /* footer */
@@ -406,39 +419,64 @@ header {
 	display: inline-block;
 	justify-content: center;
 	margin: 2em 0 0;
-	padding: 0;
+    padding: 2em;
 }
 
 .social-list__item {
 	margin: 0 .5em;
 }
 
-
 /* Individual portfolio items */
-
-.portfolio-item-individual {
-    padding: 0 2em 2em;
-    max-height: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
+.section__title--item {
+    grid-area: body;
 }
 
-.item-p {
+.portfolio-item {
     background: var(--clr-light);
 	color: var(--clr-dark);
-	text-align: center;
-	padding: 2.5em 0;
+	padding: 2.5em;
 	font-size: var(--fs-h3);
-
 }
 
-.portfolio-item-individual p {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.portfolio__img {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity: 450ms linear;
+        
+}
+.portfolio-item-individual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 1em;
+    margin: 2em auto;
+    
 }
 
+.portfolio-item-individual__about {
+    grid-area: body;
+}
+
+.portfolio-item-individual__about p {
+    font-size: 3rem;
+}
+
+.portfolio-item__img {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 600px;
+    margin: auto;
+    padding: 2em;
+}
+.portfolio-item-individual:focus {
+    position: relative;
+    z-index: 2;
+}
+.portfolio-item__img:hover {
+    transform: scale(1.1);
+    background: none; 
+}
 
 
 

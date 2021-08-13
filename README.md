@@ -1,7 +1,7 @@
 # Design Portfolio
 
 
-Industrial Design portfolio wesbite that I built for a friend of mine. 
+Industrial Design portfolio website that I built for a friend of mine. 
 
 ---
 

@@ -1,7 +1,8 @@
 # Design Portfolio website 
 
-Wesbite -> https://robertbush-myportfolio.com/
+Website -> https://robertbush-myportfolio.com/
 
+---
 
 Industrial Design portfolio that I built for a friend of mine. 
 

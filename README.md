@@ -1,7 +1,5 @@
 # Design Portfolio --> https://robertbush-myportfolio.com/
 
----
-
 Industrial Design portfolio that I built for a friend of mine. 
 
 ---
